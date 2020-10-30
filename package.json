@@ -1,0 +1,37 @@
+{
+    "name": "bookshop-xsuaa3",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^4",
+        "@sap/hana-client": "^2.6.58",
+        "@sap/xsenv": "^3.0.0",
+        "@sap/xssec": "^3.0.10",
+        "express": "^4",
+        "passport": "^0.4.1"
+    },
+    "devDependencies": {
+        "sqlite3": "^5"
+    },
+    "scripts": {
+        "start": "npx cds run"
+    },
+    "cds": {
+        "requires": {
+            "db": {
+                "kind": "hana"
+            }
+        },
+        "hana": {
+            "deploy-format": "hdbtable"
+        },
+        "auth": {
+            "passport": {
+                "strategy": "JWT"
+            }
+        }
+    }
+}
